@@ -1,0 +1,25 @@
+---
+- name: 'Install Java'
+  apt:
+    name: openjdk-8-jre-headless
+- name: 'Download Paper jar'
+  get_url:
+    url: "https://papermc.io/api/v1/paper/{{ paper_version }}/{{ paper_build }}/download"
+    dest: "/opt/minecraft/server/paper-{{ paper_build }}.jar"
+    backup: yes
+    owner: minecraft
+    group: minecraft
+- name: 'Link to Paper download'
+  file:
+    dest: /opt/minecraft/server/paper.jar
+    src: "/opt/minecraft/server/paper-{{ paper_build }}.jar"
+    state: link
+    follow: no
+    owner: minecraft
+    group: minecraft
+- name: 'Agree to EULA'
+  copy:
+    dest: /opt/minecraft/server/eula.txt
+    content: "eula=true\n"
+    owner: minecraft
+    group: minecraft

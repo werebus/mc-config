@@ -1,0 +1,45 @@
+---
+- name: 'Enable Firewall'
+  ufw:
+    state: enabled
+- name: 'Allow outgoing'
+  ufw:
+    default: allow
+    direction: outgoing
+- name: 'Allow SSH'
+  ufw:
+    rule: allow
+    port: ssh
+- name: 'Deny incomming'
+  ufw:
+    default: deny
+    direction: incoming
+- name: 'Mincraft group'
+  group:
+    name: minecraft
+    system: yes
+- name: 'Minecraft user'
+  user:
+    name: minecraft
+    system: yes
+    create_home: yes
+    home: /opt/minecraft
+    group: minecraft
+- name: 'Backups directory'
+  file:
+    path: /opt/minecraft/backups
+    state: directory
+    owner: minecraft
+    group: minecraft
+- name: 'Tools directory'
+  file:
+    path: /opt/minecraft/tools
+    state: directory
+    owner: minecraft
+    group: minecraft
+- name: 'Server directory'
+  file:
+    path: /opt/minecraft/server
+    state: directory
+    owner: minecraft
+    group: minecraft

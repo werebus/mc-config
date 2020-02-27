@@ -1,0 +1,5 @@
+---
+mcrcon_reinstall_from_source: no
+mcrcon_version: '0.7.1'
+paper_version: '1.15.2'
+paper_build: '121'
