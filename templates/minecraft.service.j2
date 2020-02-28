@@ -1,0 +1,25 @@
+[Unit]
+Description=Minecraft Server %i
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/minecraft/%i
+PrivateUsers=true
+User={{ minecraft_user }}
+Group={{ minecraft_group }}
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+ExecStart=/usr/bin/java -Xms{{ minecraft_ram }} -Xmx{{ minecraft_ram }} -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=35 -XX:+AlwaysPreTouch -XX:+ParallelRefProcEnabled -Dusing.aikars.flags=mcflags.emc.gs -jar paper.jar nogui
+ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -P {{ rcon_port }} -p {{rcon_password}} reload
+ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P {{ rcon_port }} -p {{rcon_password}} -w 10 "say SERVER IS SHUTTING DOWN" save-all stop
+ExecStop=/bin/sleep 10
+
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target

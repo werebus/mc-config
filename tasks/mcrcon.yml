@@ -17,8 +17,6 @@
     ( mcrcon_installed_version.stdout_lines[0] |
       regex_replace("^[^ ]* ([0-9]+\.[0-9]+\.[0-9]+) .*$", "\\1" )
       is version(mcrcon_version, "<") )
-- debug:
-    msg: "{{mcrcon_reinstall_from_source}}"
 - name: 'Get mcrcon source'
   git:
     repo: 'https://github.com/Tiiffi/mcrcon.git'
