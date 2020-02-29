@@ -1,0 +1,6 @@
+[Unit]
+Description=Minecraft World Backup
+
+[Service]
+Type=simple
+ExecStart=/opt/minecraft/tools/backup.sh

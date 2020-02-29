@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Minecraft World Backup
+
+[Timer]
+OnCalendar=*-*-* 04:30:00
+Unit=minecraft-backup.service
+
+[Install]
+WantedBy=multi-user.target
+

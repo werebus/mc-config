@@ -1,0 +1,29 @@
+---
+- name: 'Backup script'
+  template:
+    src: templates/backup.sh.j2
+    dest: /opt/minecraft/tools/backup.sh
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+    mode: '755'
+- name: 'Backup service'
+  copy:
+    src: files/minecraft-backup.service
+    dest: /etc/systemd/system/minecraft-backup.service
+- name: 'Backup timer'
+  copy:
+    src: files/minecraft-backup.timer
+    dest: /etc/systemd/system/minecraft-backup.timer
+- name: 'Enable backup timer'
+  systemd:
+    name: 'minecraft-backup.timer'
+    enabled: yes
+    state: started
+    daemon_reload: yes
+- name: 'Console script'
+  template:
+    src: templates/console.sh.j2
+    dest: /opt/minecraft/tools/console.sh
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+    mode: '755'
