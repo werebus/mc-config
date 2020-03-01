@@ -14,6 +14,9 @@
   ufw:
     default: deny
     direction: incoming
+- name: 'Local timezone'
+  timezone:
+    name: 'America/New_York'
 - name: 'Mincraft group'
   group:
     name: "{{ minecraft_group }}"

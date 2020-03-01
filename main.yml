@@ -4,5 +4,6 @@
 
   tasks:
     - import_tasks: tasks/main.yml
-    #- import_tasks: tasks/mcrcon.yml
+    - import_tasks: tasks/mcrcon.yml
     - import_tasks: tasks/minecraft.yml
+    - import_tasks: tasks/tools.yml
