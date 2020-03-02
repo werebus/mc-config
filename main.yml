@@ -7,3 +7,10 @@
     - import_tasks: tasks/mcrcon.yml
     - import_tasks: tasks/minecraft.yml
     - import_tasks: tasks/tools.yml
+    - import_tasks: tasks/plugins.yml
+
+  handlers:
+    - name: restart minecraft
+      systemd:
+        name: 'minecraft@server.service'
+        state: restarted

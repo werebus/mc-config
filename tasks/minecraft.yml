@@ -17,6 +17,8 @@
     follow: no
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
 - name: 'Agree to EULA'
   copy:
     dest: /opt/minecraft/server/eula.txt
@@ -29,6 +31,16 @@
     dest: /opt/minecraft/server/server.properties
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
+- name: 'User whitelist'
+  copy:
+    dest: /opt/minecraft/server/whitelist.json
+    content: "{{ user_whitelist }}"
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
 - name: 'Minecraft systemd unit'
   template:
     src: templates/minecraft.service.j2
@@ -43,4 +55,3 @@
   ufw:
     rule: allow
     port: "{{ minecraft_port }}"
-
