@@ -1,10 +1,26 @@
 ---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+
+- name: 'Backups directory'
+  file:
+    <<: *mco
+    path: "{{ minecraft_dir }}/backups"
+    state: directory
+- name: 'Tools directory'
+  file:
+    <<: *mco
+    path: "{{ minecraft_dir }}/tools"
+    state: directory
 - name: 'Backup script'
   template:
+    <<: *mco
     src: templates/backup.sh.j2
     dest: "{{ minecraft_dir }}/tools/backup.sh"
-    owner: "{{ minecraft_user }}"
-    group: "{{ minecraft_group }}"
     mode: '755'
 - name: 'Backup service'
   template:
@@ -22,8 +38,7 @@
     daemon_reload: yes
 - name: 'Console script'
   template:
+    <<: *mco
     src: templates/console.sh.j2
     dest: "{{ minecraft_dir }}/tools/console.sh"
-    owner: "{{ minecraft_user }}"
-    group: "{{ minecraft_group }}"
     mode: '755'
