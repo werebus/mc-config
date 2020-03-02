@@ -6,8 +6,8 @@ function rcon {
 
 rcon "save-off"
 rcon "save-all"
-tar -cvpzf /opt/minecraft/backups/server-$(date +%F_%R).tar.gz /opt/minecraft/server
+tar -cvpzf {{ minecraft_dir }}/backups/server-$(date +%F_%R).tar.gz {{ minecraft_dir }}/server
 rcon "save-on"
 
 ## Delete older backups
-find /opt/minecraft/backups/ -type f -mtime +7 -name '*.gz' -delete
+find {{ minecraft_dir }}/backups/ -type f -mtime +7 -name '*.gz' -delete

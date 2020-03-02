@@ -2,13 +2,13 @@
 - name: 'Backup script'
   template:
     src: templates/backup.sh.j2
-    dest: /opt/minecraft/tools/backup.sh
+    dest: "{{ minecraft_dir }}/tools/backup.sh"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
     mode: '755'
 - name: 'Backup service'
-  copy:
-    src: files/minecraft-backup.service
+  template:
+    src: templates/minecraft-backup.service.j2
     dest: /etc/systemd/system/minecraft-backup.service
 - name: 'Backup timer'
   copy:
@@ -23,7 +23,7 @@
 - name: 'Console script'
   template:
     src: templates/console.sh.j2
-    dest: /opt/minecraft/tools/console.sh
+    dest: "{{ minecraft_dir }}/tools/console.sh"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
     mode: '755'

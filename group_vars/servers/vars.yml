@@ -1,14 +1,19 @@
 ---
-mcrcon_reinstall_from_source: no
-mcrcon_version: '0.7.1'
-paper_version: '1.15.2'
-paper_build: '121'
-rcon_port: 25575
-rcon_password: "{{ vault_rcon_password }}"
 minecraft_user: minecraft
 minecraft_group: minecraft
+minecraft_dir: /opt/minecraft
 minecraft_ram: "{{ (ansible_memtotal_mb * 0.5) | round | int }}M"
 minecraft_port: '25565'
+user_whitelist: "{{ vault_user_whitelist | to_json }}"
+
+paper_version: '1.15.2'
+paper_build: '121'
+
+mcrcon_reinstall_from_source: no
+mcrcon_version: '0.7.1'
+rcon_port: 25575
+rcon_password: "{{ vault_rcon_password }}"
+
 bukkit_plugins:
   - name: Vault
     version: '1.7.2'
@@ -22,4 +27,3 @@ bukkit_plugins:
     version: '2.17.2'
     file: essentialsx.jar
     checksum: 02051464b5f86af38bba32991e8acd76b42b9330
-user_whitelist: "{{ vault_user_whitelist | to_json }}"

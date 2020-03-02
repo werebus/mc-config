@@ -26,23 +26,23 @@
     name: "{{ minecraft_user }}"
     system: yes
     create_home: yes
-    home: /opt/minecraft
+    home: "{{ minecraft_dir }}"
     group: "{{ minecraft_group }}"
 - name: 'Backups directory'
   file:
-    path: /opt/minecraft/backups
+    path: "{{ minecraft_dir }}/backups"
     state: directory
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
 - name: 'Tools directory'
   file:
-    path: /opt/minecraft/tools
+    path: "{{ minecraft_dir }}/tools"
     state: directory
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
 - name: 'Server directory'
   file:
-    path: /opt/minecraft/server
+    path: "{{ minecraft_dir }}/server"
     state: directory
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"

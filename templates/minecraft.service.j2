@@ -3,7 +3,7 @@ Description=Minecraft Server %i
 After=network.target
 
 [Service]
-WorkingDirectory=/opt/minecraft/%i
+WorkingDirectory={{ minecraft_dir }}/%i
 PrivateUsers=true
 User={{ minecraft_user }}
 Group={{ minecraft_group }}

@@ -5,14 +5,14 @@
 - name: 'Download Paper jar'
   get_url:
     url: "https://papermc.io/api/v1/paper/{{ paper_version }}/{{ paper_build }}/download"
-    dest: "/opt/minecraft/server/paper-{{ paper_build }}.jar"
+    dest: "{{ minecraft_dir }}/server/paper-{{ paper_build }}.jar"
     backup: yes
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
 - name: 'Link to Paper download'
   file:
-    dest: /opt/minecraft/server/paper.jar
-    src: "/opt/minecraft/server/paper-{{ paper_build }}.jar"
+    dest: "{{ minecraft_dir }}/server/paper.jar"
+    src: "{{ minecraft_dir }}/server/paper-{{ paper_build }}.jar"
     state: link
     follow: no
     owner: "{{ minecraft_user }}"
@@ -21,21 +21,21 @@
     - restart minecraft
 - name: 'Agree to EULA'
   copy:
-    dest: /opt/minecraft/server/eula.txt
+    dest: "{{ minecraft_dir }}/server/eula.txt"
     content: "eula=true\n"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
 - name: 'Server properties'
   template:
     src: templates/server.properties.j2
-    dest: /opt/minecraft/server/server.properties
+    dest: "{{ minecraft_dir }}/server/server.properties"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
   notify:
     - restart minecraft
 - name: 'User whitelist'
   copy:
-    dest: /opt/minecraft/server/whitelist.json
+    dest: "{{ minecraft_dir }}/server/whitelist.json"
     content: "{{ user_whitelist }}"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"

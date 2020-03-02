@@ -2,7 +2,7 @@
 - name: 'Install plugins'
   copy:
     src: "files/plugins/{{ item.file }}"
-    dest: "/opt/minecraft/server/plugins/{{ item.file }}"
+    dest: "{{ minecraft_dir }}/server/plugins/{{ item.file }}"
     checksum: "{{ item.checksum }}"
     backup: yes
     owner: "{{ minecraft_user }}"
@@ -14,7 +14,7 @@
 - name: 'Cenotaph config'
   copy:
     src: files/cenotaph_config.yml
-    dest: /opt/minecraft/server/plugins/Cenotaph/config.yml
+    dest: "{{ minecraft_dir }}/server/plugins/Cenotaph/config.yml"
     owner: "{{ minecraft_user }}"
     group: "{{ minecraft_group }}"
   notify:
