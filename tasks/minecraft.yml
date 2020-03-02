@@ -33,6 +33,30 @@
     group: "{{ minecraft_group }}"
   notify:
     - restart minecraft
+- name: 'Bukkit config'
+  copy:
+    src: files/bukkit.yml
+    dest: "{{ minecraft_dir }}/server/bukkit.yml"
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
+- name: 'Spigot config'
+  copy:
+    src: files/spigot.yml
+    dest: "{{ minecraft_dir }}/server/spigot.yml"
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
+- name: 'Paper config'
+  copy:
+    src: files/paper.yml
+    dest: "{{ minecraft_dir }}/server/paper.yml"
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+  notify:
+    - restart minecraft
 - name: 'User whitelist'
   copy:
     dest: "{{ minecraft_dir }}/server/whitelist.json"
