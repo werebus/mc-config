@@ -1,21 +1,27 @@
 ---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+    restart_minecraft: &rst
+      notify:
+        - restart minecraft
+
 - name: 'Install plugins'
+  <<: *rst
   copy:
+    <<: *mco
     src: "files/plugins/{{ item.file }}"
     dest: "{{ minecraft_dir }}/server/plugins/{{ item.file }}"
     checksum: "{{ item.checksum }}"
     backup: yes
-    owner: "{{ minecraft_user }}"
-    group: "{{ minecraft_group }}"
-  notify:
-    - restart minecraft
   loop: "{{ bukkit_plugins }}"
 
 - name: 'Cenotaph config'
+  <<: *rst
   copy:
+    <<: *mco
     src: files/cenotaph_config.yml
     dest: "{{ minecraft_dir }}/server/plugins/Cenotaph/config.yml"
-    owner: "{{ minecraft_user }}"
-    group: "{{ minecraft_group }}"
-  notify:
-    - restart minecraft
