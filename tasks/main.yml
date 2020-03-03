@@ -16,7 +16,7 @@
     direction: incoming
 - name: 'Local timezone'
   timezone:
-    name: 'America/New_York'
+    name: "{{ time_zone }}"
 - name: 'Mincraft group'
   group:
     name: "{{ minecraft_group }}"

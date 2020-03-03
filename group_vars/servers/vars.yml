@@ -1,4 +1,6 @@
 ---
+time_zone: 'America/New_York'
+
 minecraft_user: minecraft
 minecraft_group: minecraft
 minecraft_dir: /opt/minecraft
