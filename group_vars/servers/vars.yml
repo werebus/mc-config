@@ -6,7 +6,12 @@ minecraft_group: minecraft
 minecraft_dir: /opt/minecraft
 minecraft_ram: "{{ (ansible_memtotal_mb * 0.5) | round | int }}M"
 minecraft_port: '25565'
+
 user_whitelist: "{{ vault_user_whitelist | to_json }}"
+# - name: username
+#   uuid: 0ddba110-0000-0000-0000-ba53ball0000
+# - name: anotheruser
+#   uuid: facade22-0000-0000-0000-5caff01d0000
 
 paper_version: '1.15.2'
 paper_build: '121'
