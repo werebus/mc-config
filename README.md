@@ -14,6 +14,7 @@ Plugins
 =======
 * [Vault][vault]
 * [EssentialsX][esx]
+* [DynMap][dynmap]
 * [Cenotaph][cenotaph]
 
 Prereqs
@@ -46,6 +47,7 @@ $ ansible-playbook main.yml --user <remote_user>
 [ansible]: https://www.ansible.com/
 [cenotaph]: https://www.spigotmc.org/resources/cenotaph.2180/
 [esx]: https://www.spigotmc.org/resources/essentialsx.9089/
+[dynmap]: https://www.spigotmc.org/resources/dynmap.274/
 [mcrcon]: https://github.com/Tiiffi/mcrcon
 [paper]: https://papermc.io/
 [vault]: https://www.spigotmc.org/resources/vault.34315/

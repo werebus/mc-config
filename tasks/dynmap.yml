@@ -1,0 +1,65 @@
+---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+    restart_minecraft: &rst
+      notify:
+        - restart minecraft
+
+- name: 'Dynmap config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: files/dynmap_configuration.yml
+    dest: "{{ minecraft_dir }}/server/plugins/dynmap/configuration.txt"
+- name: 'Install Lighttpd'
+  apt:
+    name: lighttpd
+- name: 'Allow http in'
+  ufw:
+    rule: allow
+    port: http
+- name: 'Allow https in'
+  ufw:
+    rule: allow
+    port: https
+- name: 'Lighttpd config'
+  template:
+    src: templates/lighttpd.conf.j2
+    dest: /etc/lighttpd/lighttpd.conf
+  notify:
+    - restart lighttpd
+- name: 'Install certbot'
+  apt:
+    name: certbot
+- name: 'Get initial certificate'
+  command:
+    cmd: > 
+      certbot certonly -n -m {{ admin_email }} --agree-tos
+      --webroot --webroot-path {{ minecraft_map_webroot }}
+      -d {{ ansible_fqdn }} 
+    creates: "/etc/letsencrypt/live/{{ ansible_fqdn }}/cert.pem"
+- name: 'Combined key/cert file'
+  assemble:
+    remote_src: yes
+    src: "/etc/letsencrypt/live/{{ ansible_fqdn }}"
+    regexp: "(privkey|cert)\\.pem"
+    dest: "/etc/letsencrypt/live/{{ ansible_fqdn }}/combined.pem"
+- name: 'Allow webserver to read live cert'
+  file:
+    path: /etc/letsencrypt/live
+    group: www-data
+    mode: 'g+x'
+- name: 'Allow webserver to read archive cert'
+  file:
+    path: /etc/letsencrypt/archive
+    group: www-data
+    mode: 'g+x'
+- name: 'Letsencrypt deploy hook'
+  template:
+    src: templates/certbot_renew_deploy_hook.sh.j2
+    dest: /etc/letsencrypt/renewal-hooks/deploy/lighttpd.sh
+    mode: '0700'

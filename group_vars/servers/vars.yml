@@ -1,11 +1,13 @@
 ---
 time_zone: 'America/New_York'
+admin_email: 'werebus@gmail.com'
 
 minecraft_user: minecraft
 minecraft_group: minecraft
 minecraft_dir: /opt/minecraft
 minecraft_ram: "{{ (ansible_memtotal_mb * 0.5) | round | int }}M"
 minecraft_port: '25565'
+minecraft_map_webroot: "{{ minecraft_dir }}/server/plugins/dynmap/web"
 
 user_whitelist: "{{ vault_user_whitelist | to_json }}"
 # - name: username
@@ -34,3 +36,7 @@ bukkit_plugins:
     version: '2.17.2'
     file: essentialsx.jar
     checksum: 02051464b5f86af38bba32991e8acd76b42b9330
+  - name: DynMap
+    version: '3.0-beta-10'
+    file: dynmap.jar
+    checksum: 5876da87f5d6cc2aa9659b7b7029e42bcd25d2df
