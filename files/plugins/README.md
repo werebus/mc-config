@@ -6,6 +6,8 @@ licensed by their original author(s), not the owner of this repository:
   `GPL-3.0-or-later`
 * `dynmap.jar` - Copyright unknown. `Apache-2.0`
 * `essentialsx.jar` - Copyright (C) 2011  Essentials Team. `GPL-3.0-or-later`
+* `luckperms.jar` - Copyright (C) lucko (Luck) <luck@lucko.me>, contributors.
+  `MIT`
 * `vault,jar` - Copyright (C) 2011-2018 Morgan Humes <morgan@lanaddict.com>.
   `GPL-3.0-or-later`
 

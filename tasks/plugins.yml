@@ -25,3 +25,9 @@
     <<: *mco
     src: files/cenotaph_config.yml
     dest: "{{ minecraft_dir }}/server/plugins/Cenotaph/config.yml"
+- name: 'LuckPerms config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: files/luckperms_config.yml
+    dest: "{{ minecraft_dir }}/server/plugins/LuckPerms/config.yml"

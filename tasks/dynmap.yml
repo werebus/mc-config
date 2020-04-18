@@ -5,16 +5,14 @@
     minecraft_owned: &mco
       owner: "{{ minecraft_user }}"
       group: "{{ minecraft_group }}"
-    restart_minecraft: &rst
-      notify:
-        - restart minecraft
 
 - name: 'Dynmap config'
-  <<: *rst
   copy:
     <<: *mco
     src: files/dynmap_configuration.yml
     dest: "{{ minecraft_dir }}/server/plugins/dynmap/configuration.txt"
+  notify:
+    - restart minecraft
 - name: 'Install Lighttpd'
   apt:
     name: lighttpd

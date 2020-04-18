@@ -1,0 +1,70 @@
+server: global
+use-server-uuid-cache: false
+
+storage-method: yaml
+split-storage:
+  enabled: false
+
+sync-minutes: -1
+watch-files: true
+
+messaging-service: auto
+auto-push-updates: true
+push-log-entries: true
+broadcast-received-log-entries: true
+
+redis:
+  enabled: false
+
+temporary-add-behaviour: deny
+primary-group-calculation: parents-by-weight
+argument-based-command-permissions: false
+require-sender-group-membership-to-modify: false
+log-notify: true
+meta-formatting:
+  prefix:
+    format:
+      - "highest"
+    duplicates: first-only
+    start-spacer: ""
+    middle-spacer: " "
+    end-spacer: ""
+  suffix:
+    format:
+      - "highest"
+    duplicates: first-only
+    start-spacer: ""
+    middle-spacer: " "
+    end-spacer: ""
+
+inheritance-traversal-algorithm: depth-first-pre-order
+post-traversal-inheritance-sort: false
+
+include-global: true
+include-global-world: true
+apply-global-groups: true
+apply-global-world-groups: true
+
+apply-wildcards: true
+apply-regex: true
+apply-shorthand: true
+apply-bukkit-child-permissions: true
+apply-bukkit-default-permissions: true
+apply-bukkit-attachment-permissions: true
+
+enable-ops: true
+auto-op: false
+commands-allow-op: true
+
+vault-unsafe-lookups: false
+vault-npc-group: default
+vault-npc-op-status: false
+use-vault-server: false
+vault-server: global
+vault-include-global: true
+vault-ignore-world: false
+
+debug-logins: false
+allow-invalid-usernames: false
+prevent-primary-group-removal: false
+resolve-command-selectors: false
