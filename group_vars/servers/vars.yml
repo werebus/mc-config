@@ -5,9 +5,10 @@ admin_email: 'werebus@gmail.com'
 minecraft_user: minecraft
 minecraft_group: minecraft
 minecraft_dir: /opt/minecraft
+plugin_dir: "{{ minecraft_dir }}/server/plugins"
 minecraft_ram: "{{ (ansible_memtotal_mb * 0.5) | round | int }}M"
 minecraft_port: '25565'
-minecraft_map_webroot: "{{ minecraft_dir }}/server/plugins/dynmap/web"
+minecraft_map_webroot: "{{ plugin_dir }}/dynmap/web"
 
 user_whitelist: "{{ vault_user_whitelist | to_json }}"
 # - name: username

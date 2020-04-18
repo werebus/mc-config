@@ -10,7 +10,7 @@
   copy:
     <<: *mco
     src: files/dynmap_configuration.yml
-    dest: "{{ minecraft_dir }}/server/plugins/dynmap/configuration.txt"
+    dest: "{{ plugin_dir }}/dynmap/configuration.txt"
   notify:
     - restart minecraft
 - name: 'Install Lighttpd'
