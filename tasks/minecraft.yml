@@ -79,4 +79,4 @@
   copy:
     <<: *mco
     dest: "{{ minecraft_dir }}/server/whitelist.json"
-    content: "{{ user_whitelist }}"
+    content: "{{ minecraft_users | json_query('[*].{ name: name, uuid: uuid }') }}"

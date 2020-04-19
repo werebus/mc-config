@@ -24,8 +24,8 @@
     line: "{{ lookup('env', 'USER') }} ALL=NOPASSWD: /usr/bin/rsync"
     validate: '/usr/sbin/visudo -cf %s'
 
-- name: 'Groups'
-  #<<: *rst
+- name: 'Group permissions'
+  <<: *rst
   synchronize:
     src: files/luckperms/groups/
     dest: "{{ perm_dir }}/groups"
@@ -35,6 +35,14 @@
     owner: yes
     group: yes
     rsync_opts: ["--chown={{ minecraft_user }}:{{ minecraft_group }}"]
+
+- name: 'User permissions'
+  <<: *rst
+  copy:
+    <<: *mco
+    dest: "{{ perm_dir }}/users/{{ item.uuid }}.yml"
+    content: "{{ item | to_nice_yaml }}"
+  loop: "{{ minecraft_users }}"
 
 - name: 'Disallow syncing'
   lineinfile:

@@ -10,7 +10,7 @@ minecraft_ram: "{{ (ansible_memtotal_mb * 0.5) | round | int }}M"
 minecraft_port: '25565'
 minecraft_map_webroot: "{{ plugin_dir }}/dynmap/web"
 
-user_whitelist: "{{ vault_user_whitelist | to_json }}"
+minecraft_users: "{{ vault_minecraft_users }}"
 # - name: username
 #   uuid: 0ddba110-0000-0000-0000-ba53ball0000
 # - name: anotheruser
