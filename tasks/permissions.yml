@@ -1,0 +1,44 @@
+---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+    restart_minecraft: &rst
+      notify:
+        - restart minecraft
+
+- name: 'LuckPerms config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: files/luckperms_config.yml
+    dest: "{{ plugin_dir }}/LuckPerms/config.yml"
+
+- name: 'Allow syncing'
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    insertafter: '^%sudo'
+    line: "{{ lookup('env', 'USER') }} ALL=NOPASSWD: /usr/bin/rsync"
+    validate: '/usr/sbin/visudo -cf %s'
+
+- name: 'Groups'
+  #<<: *rst
+  synchronize:
+    src: files/luckperms/groups/
+    dest: "{{ perm_dir }}/groups"
+    archive: no
+    recursive: yes
+    delete: yes
+    owner: yes
+    group: yes
+    rsync_opts: ["--chown={{ minecraft_user }}:{{ minecraft_group }}"]
+
+- name: 'Disallow syncing'
+  lineinfile:
+    path: /etc/sudoers
+    state: absent
+    line: "{{ lookup('env', 'USER') }} ALL=NOPASSWD: /usr/bin/rsync"
+    validate: '/usr/sbin/visudo -cf %s'

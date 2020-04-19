@@ -24,6 +24,8 @@ mcrcon_version: '0.7.1'
 rcon_port: 25575
 rcon_password: "{{ vault_rcon_password }}"
 
+perm_dir: "{{ plugin_dir }}/LuckPerms/yaml-storage"
+
 bukkit_plugins:
   - name: Vault
     version: '1.7.2'
