@@ -17,7 +17,7 @@ minecraft_users: "{{ vault_minecraft_users }}"
 #   uuid: facade22-0000-0000-0000-5caff01d0000
 
 paper_version: '1.15.2'
-paper_build: '121'
+paper_build: '197'
 
 mcrcon_reinstall_from_source: no
 mcrcon_version: '0.7.1'
