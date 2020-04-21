@@ -1,1 +1,27 @@
 name: players
+permissions:
+- cenotaph.freechest
+- cenotaph.freesign
+- cenotaph.large
+- essentials.afk
+- essentials.back
+- essentials.compass
+- essentials.customtext
+- essentials.depth
+- essentials.disposal
+- essentials.gamemode
+- essentials.gamemode.adventure
+- essentials.gamemode.survival
+- essentials.hat
+- essentials.help
+- essentials.ignore
+- essentials.info
+- essentials.list
+- essentials.mail
+- essentials.mail.send
+- essentials.me
+- essentials.msg
+- essentials.ping
+- essentials.r
+- essentials.rules
+- essentials.suicide

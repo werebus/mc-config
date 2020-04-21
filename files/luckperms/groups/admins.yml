@@ -1,1 +1,24 @@
 name: admins
+parents:
+- players
+
+permissions:
+- bukkit.command.paper
+- bukkit.command.reload
+- bukkit.command.restart
+- bukkit.command.spigot
+- cenotaph.admin.*
+- dynmap.*
+- essentials.ban
+- essentials.banip
+- essentials.gamemode.others
+- essentials.kick
+- essentials.lightning
+- essentials.seen
+- essentials.seen.extra
+- essentials.unban
+- essentials.unbanip
+- essentials.whois
+- luckperms.user.promote
+- minecraft.command.banlist
+- minecraft.command.seed

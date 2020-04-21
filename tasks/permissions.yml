@@ -36,6 +36,18 @@
     group: yes
     rsync_opts: ["--chown={{ minecraft_user }}:{{ minecraft_group }}"]
 
+- name: 'Tracks'
+  <<: *rst
+  synchronize:
+    src: files/luckperms/tracks/
+    dest: "{{ perm_dir }}/tracks"
+    archive: no
+    recursive: yes
+    delete: yes
+    owner: yes
+    group: yes
+    rsync_opts: ["--chown={{ minecraft_user }}:{{ minecraft_group }}"]
+
 - name: 'User permissions'
   <<: *rst
   copy:
