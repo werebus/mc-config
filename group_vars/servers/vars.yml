@@ -12,8 +12,8 @@ minecraft_map_webroot: "{{ plugin_dir }}/dynmap/web"
 
 minecraft_users: "{{ vault_minecraft_users }}"
 
-paper_version: '1.15.2'
-paper_build: '197'
+paper_version: '1.16.5'
+paper_build: '576'
 
 mcrcon_reinstall_from_source: no
 mcrcon_version: '0.7.1'
