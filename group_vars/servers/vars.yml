@@ -26,7 +26,7 @@ bukkit_plugins:
   - name: Vault
     version: '1.7.2'
     file: vault.jar
-    checksum: ce7fca7917a09a265f694d4d7145e144cdb0327e
+    checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: Cenotaph
     version: '5.6'
     file: cenotaph.jar
@@ -36,10 +36,10 @@ bukkit_plugins:
     file: essentialsx.jar
     checksum: 02051464b5f86af38bba32991e8acd76b42b9330
   - name: LuckPerms
-    version: '5.0.88'
+    version: '5.3.16'
     file: luckperms.jar
-    checksum: ae18a4dfd817b3dff1363674f9bda995a9ba2cda
+    checksum: 9b25c10c2029b8af4f823b9388d3effbf5847cf6
   - name: DynMap
-    version: '3.0-beta-10'
+    version: '3.1 GA'
     file: dynmap.jar
-    checksum: 5876da87f5d6cc2aa9659b7b7029e42bcd25d2df
+    checksum: 7741cd0b223d4bb3f4395e996c8ce8c7a6145212
