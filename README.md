@@ -1,6 +1,6 @@
 Ansible playbook to configure my (private) Minecraft server. The philosophy
 here is that everything should be configured _here_ and deployed over Ansible.
-Any manual changes to the servier configuration will likely be overwritten.
+Any manual changes to the server configuration will likely be overwritten.
 
 Installed components
 ====================
@@ -19,7 +19,7 @@ Plugins
 
 Prereqs
 =======
-* Ubuntu 18.04
+* Ubuntu 20.04
 * A user capable of sudoing
 * [Ansible][ansible] on your local machine
 
