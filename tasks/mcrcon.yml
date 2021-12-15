@@ -1,9 +1,10 @@
 ---
-- name: 'Install build reqs'
+- name: 'Install prereqs'
   apt:
     pkg:
       - git
       - build-essential
+      - rlwrap
 - name: 'Get installed mcrcon version'
   command: 'mcrcon -v'
   ignore_errors: yes
