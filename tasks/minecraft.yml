@@ -24,7 +24,7 @@
 - name: 'Download Paper jar'
   get_url:
     <<: *mco
-    url: "https://papermc.io/api/v1/paper/{{ paper_version }}/{{ paper_build }}/download"
+    url: "https://papermc.io/api/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}/downloads/paper-{{ paper_version }}-{{ paper_build }}.jar"
     dest: "{{ minecraft_dir }}/server/paper-{{ paper_build }}.jar"
     backup: yes
 - name: 'Link to Paper download'
