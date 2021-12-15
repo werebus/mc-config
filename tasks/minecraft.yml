@@ -15,7 +15,7 @@
     port: "{{ minecraft_port }}"
 - name: 'Install Java'
   apt:
-    name: openjdk-11-jre-headless
+    name: openjdk-16-jre-headless
 - name: 'Server directory'
   file:
     <<: *mco
