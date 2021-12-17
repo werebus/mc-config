@@ -23,7 +23,7 @@ perm_dir: "{{ plugin_dir }}/LuckPerms/yaml-storage"
 
 bukkit_plugins:
   - name: Vault
-    version: '1.7.2'
+    version: '1.7.3'
     file: vault.jar
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: Cenotaph
@@ -31,14 +31,14 @@ bukkit_plugins:
     file: cenotaph.jar
     checksum: f42ad17e4c07b85ff7fa005aef59973713499ed3
   - name: EssentialsX
-    version: '2.17.2'
+    version: '2.19.2'
     file: essentialsx.jar
-    checksum: 02051464b5f86af38bba32991e8acd76b42b9330
+    checksum: d7d3468f1663aa0667a1e203437906bb490ed81f
   - name: LuckPerms
-    version: '5.3.16'
+    version: '5.3.89'
     file: luckperms.jar
-    checksum: 9b25c10c2029b8af4f823b9388d3effbf5847cf6
+    checksum: bcf65f5f749487dc50eb74913daab2e25a1dc87a
   - name: DynMap
-    version: '3.1 GA'
+    version: '3.2.1'
     file: dynmap.jar
-    checksum: 7741cd0b223d4bb3f4395e996c8ce8c7a6145212
+    checksum: 5f7d7a46c8d5804dc4e18684f291a1bdbc463601
