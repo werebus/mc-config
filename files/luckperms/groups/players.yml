@@ -12,6 +12,7 @@ permissions:
 - essentials.gamemode
 - essentials.gamemode.adventure
 - essentials.gamemode.survival
+- essentials.getpos
 - essentials.hat
 - essentials.help
 - essentials.ignore
