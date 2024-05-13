@@ -12,6 +12,7 @@ permissions:
 - essentials.ban
 - essentials.banip
 - essentials.gamemode.others
+- essentials.gamemode.spectator
 - essentials.kick
 - essentials.lightning
 - essentials.seen
