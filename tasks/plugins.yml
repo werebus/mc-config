@@ -9,6 +9,16 @@
       notify:
         - restart minecraft
 
+- name: 'Plugin directories'
+  file:
+    <<: *mco
+    path: "{{ plugin_dir }}/{{ item }}"
+    state: directory
+  with_items:
+    - 'Cenotaph'
+    - 'dynmap'
+    - 'LuckPerms'
+
 - name: 'Install plugins'
   <<: *rst
   copy:

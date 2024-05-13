@@ -16,6 +16,12 @@
     src: files/luckperms_config.yml
     dest: "{{ plugin_dir }}/LuckPerms/config.yml"
 
+- name: 'LuckPerms permission dir'
+  file:
+    <<: *mco
+    path: "{{ perm_dir }}"
+    state: directory
+
 - name: 'Allow syncing'
   lineinfile:
     path: /etc/sudoers
@@ -47,6 +53,12 @@
     owner: yes
     group: yes
     rsync_opts: ["--chown={{ minecraft_user }}:{{ minecraft_group }}"]
+
+- name: 'User permissions directory'
+  file:
+    <<: *mco
+    path: "{{ perm_dir }}/users"
+    state: directory
 
 - name: 'User permissions'
   <<: *rst

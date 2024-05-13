@@ -28,3 +28,10 @@
     create_home: yes
     home: "{{ minecraft_dir }}"
     group: "{{ minecraft_group }}"
+- name: 'Minecraft directory'
+  file:
+    path: "{{ minecraft_dir }}"
+    state: directory
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+    mode: 0755
