@@ -35,9 +35,9 @@ bukkit_plugins:
     file: essentialsx.jar
     checksum: e626f9f250470bcf2feffbc3740f738f9cee50ef
   - name: LuckPerms
-    version: '5.3.89'
+    version: '5.4.128'
     file: luckperms.jar
-    checksum: bcf65f5f749487dc50eb74913daab2e25a1dc87a
+    checksum: 3ab0a738fc242ec3a699d38382400e4bbfdfc872
   - name: DynMap
     version: '3.2.1'
     file: dynmap.jar
