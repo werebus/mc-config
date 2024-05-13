@@ -31,9 +31,9 @@ bukkit_plugins:
     file: cenotaph.jar
     checksum: f42ad17e4c07b85ff7fa005aef59973713499ed3
   - name: EssentialsX
-    version: '2.19.2'
+    version: '2.20.1'
     file: essentialsx.jar
-    checksum: d7d3468f1663aa0667a1e203437906bb490ed81f
+    checksum: e626f9f250470bcf2feffbc3740f738f9cee50ef
   - name: LuckPerms
     version: '5.3.89'
     file: luckperms.jar
