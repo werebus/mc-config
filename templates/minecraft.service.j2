@@ -27,7 +27,7 @@ ExecStart=/usr/bin/java -Xms{{ minecraft_ram }} -Xmx{{ minecraft_ram }} \
                         -XX:MaxTenuringThreshold=1 \
                         -Dusing.aikars.flags=https://mcflags.emc.gs \
                         -Daikars.new.flags=true \
-                        -jar paper.jar nogui
+                        -jar paper.jar --nogui
 ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -P {{ rcon_port }} \
                                  -p {{rcon_password}} reload
 ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P {{ rcon_port }} \
