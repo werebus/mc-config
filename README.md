@@ -1,6 +1,7 @@
-Ansible playbook to configure my (private) Minecraft server. The philosophy
-here is that everything should be configured _here_ and deployed over Ansible.
-Any manual changes to the server configuration will likely be overwritten.
+[Ansible][ansible] playbook to configure my (private) Minecraft server. The
+philosophy here is that everything should be configured _here_ and deployed
+over Ansible. Any manual changes to the server configuration will likely be
+overwritten.
 
 Installed components
 ====================
@@ -21,9 +22,9 @@ Plugins
 
 Prereqs
 =======
-* Ubuntu 20.04
+* Ubuntu 24.04
 * A user capable of sudoing
-* [Ansible][ansible] on your local machine
+* Pipenv (for Python dependencies) on your workstation - `pip install pipenv`
 
 Setup
 =====
@@ -31,6 +32,11 @@ Setup
 2. Get the vault password and put it in a file named `vault-password`. You can,
    of course, start from scratch. All "secret" variables are proxied in
    `vars.yml`.
+3. Install the required Python packages
+    ```bash
+    source .envrc # done automatically if you have direnv
+    pipenv install
+    ```
 
 Configuration
 =============
