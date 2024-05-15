@@ -30,6 +30,7 @@ bukkit_plugins:
     version: '6.1'
     file: cenotaph.jar
     checksum: 017fd52db582160dc2b63e9b33a4b627fb34d89f
+    confdir: 'Cenotaph'
   - name: EssentialsX
     version: '2.20.1'
     file: essentialsx.jar
@@ -38,10 +39,12 @@ bukkit_plugins:
     version: '5.4.128'
     file: luckperms.jar
     checksum: 3ab0a738fc242ec3a699d38382400e4bbfdfc872
+    confdir: 'LuckPerms'
   - name: DynMap
     version: '3.6'
     file: dynmap.jar
     checksum: a423f4270c4ceab49b6c19794c93ee5ff4e6c3d6
+    confdir: 'dynmap'
   - name: Spark
     version: '1.10.66'
     file: spark.jar

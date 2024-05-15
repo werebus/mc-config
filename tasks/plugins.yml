@@ -12,12 +12,9 @@
 - name: 'Plugin directories'
   file:
     <<: *mco
-    path: "{{ plugin_dir }}/{{ item }}"
+    path: "{{ plugin_dir }}/{{ item.confdir }}"
     state: directory
-  with_items:
-    - 'Cenotaph'
-    - 'dynmap'
-    - 'LuckPerms'
+  loop: "{{ bukkit_plugins | selectattr('confdir', 'defined') }}"
 
 - name: 'Install plugins'
   <<: *rst
