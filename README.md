@@ -19,6 +19,7 @@ Plugins
 * [LuckPerms][lp]
 * [DynMap][dynmap]
 * [Cenotaph][cenotaph]
+* [Spark][spark]
 
 Prereqs
 =======
@@ -59,4 +60,5 @@ $ ansible-playbook main.yml --user <remote_user>
 [lp]: https://luckperms.net/
 [mcrcon]: https://github.com/Tiiffi/mcrcon
 [paper]: https://papermc.io/
+[spark]: https://spark.lucko.me/
 [vault]: https://www.spigotmc.org/resources/vault.34315/

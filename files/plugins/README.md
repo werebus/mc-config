@@ -8,6 +8,8 @@ licensed by their original author(s), not the owner of this repository:
 * `essentialsx.jar` - Copyright (C) 2011  Essentials Team. `GPL-3.0-or-later`
 * `luckperms.jar` - Copyright (C) lucko (Luck) <luck@lucko.me>, contributors.
   `MIT`
+* `spark.jar` - Copyright (C) 2018-2024 lucko (Luck) & other spark
+  contributors. `GPL-3.0-or-later`
 * `vault,jar` - Copyright (C) 2011-2018 Morgan Humes <morgan@lanaddict.com>.
   `GPL-3.0-or-later`
 
