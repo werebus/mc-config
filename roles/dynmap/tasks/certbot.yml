@@ -1,0 +1,17 @@
+---
+- name: 'Install certbot'
+  apt:
+    name: certbot
+- name: 'Letsencrypt deploy hook'
+  template:
+    src: certbot_renew_deploy_hook.sh.j2
+    dest: /etc/letsencrypt/renewal-hooks/deploy/lighttpd.sh
+    mode: '0700'
+
+- name: 'Check if certificate exists'
+  stat:
+    path: "/etc/letsencrypt/live/{{ ansible_fqdn }}/cert.pem"
+  register: cert_exists
+
+- include_tasks: certbot-certificate.yml
+  when: not cert_exists.stat.exists

@@ -1,0 +1,10 @@
+---
+- name: 'Tools directory'
+  file:
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+    path: "{{ minecraft_dir }}/tools"
+    state: directory
+
+- include_tasks: console.yml
+- include_tasks: backups.yml

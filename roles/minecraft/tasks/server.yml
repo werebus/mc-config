@@ -1,0 +1,49 @@
+---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+    restart_minecraft: &rst
+      notify:
+        - restart minecraft
+
+- name: 'Server directory'
+  file:
+    <<: *mco
+    path: "{{ minecraft_dir }}/server"
+    state: directory
+- name: 'Agree to EULA'
+  copy:
+    <<: *mco
+    dest: "{{ minecraft_dir }}/server/eula.txt"
+    content: "eula=true\n"
+
+- name: 'Server properties'
+  <<: *rst
+  template:
+    <<: *mco
+    src: server.properties.j2
+    dest: "{{ minecraft_dir }}/server/server.properties"
+- name: 'Bukkit config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: bukkit.yml
+    dest: "{{ minecraft_dir }}/server/bukkit.yml"
+- name: 'Spigot config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: spigot.yml
+    dest: "{{ minecraft_dir }}/server/spigot.yml"
+- name: 'Paper config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: paper.yml
+    dest: "{{ minecraft_dir }}/server/paper.yml"
+
+- include_tasks: paper.yml
+- include_tasks: service.yml

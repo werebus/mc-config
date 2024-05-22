@@ -1,0 +1,3 @@
+---
+minecraft_users: "{{ vault_minecraft_users }}"
+perm_dir: "{{ plugin_dir }}/LuckPerms/yaml-storage"

@@ -20,7 +20,7 @@
   <<: *rst
   copy:
     <<: *mco
-    src: "files/plugins/{{ item.file }}"
+    src: "{{item.file }}"
     dest: "{{ plugin_dir }}/{{ item.file }}"
     checksum: "{{ item.checksum }}"
     backup: yes
@@ -30,5 +30,5 @@
   <<: *rst
   copy:
     <<: *mco
-    src: files/cenotaph_config.yml
+    src: cenotaph_config.yml
     dest: "{{ plugin_dir }}/Cenotaph/config.yml"

@@ -11,20 +11,15 @@
     <<: *mco
     path: "{{ minecraft_dir }}/backups"
     state: directory
-- name: 'Tools directory'
-  file:
-    <<: *mco
-    path: "{{ minecraft_dir }}/tools"
-    state: directory
 - name: 'Backup script'
   template:
     <<: *mco
-    src: templates/backup.sh.j2
+    src: backup.sh.j2
     dest: "{{ minecraft_dir }}/tools/backup.sh"
     mode: '755'
 - name: 'Backup service'
   template:
-    src: templates/minecraft-backup.service.j2
+    src: minecraft-backup.service.j2
     dest: /etc/systemd/system/minecraft-backup.service
 - name: 'Backup timer'
   copy:
@@ -36,9 +31,4 @@
     enabled: yes
     state: started
     daemon_reload: yes
-- name: 'Console script'
-  template:
-    <<: *mco
-    src: templates/console.sh.j2
-    dest: "{{ minecraft_dir }}/tools/console.sh"
-    mode: '755'
+

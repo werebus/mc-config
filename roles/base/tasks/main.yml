@@ -1,0 +1,19 @@
+---
+- name: 'Enable Firewall'
+  ufw:
+    state: enabled
+- name: 'Allow outgoing'
+  ufw:
+    default: allow
+    direction: outgoing
+- name: 'Allow SSH'
+  ufw:
+    rule: allow
+    port: ssh
+- name: 'Deny incomming'
+  ufw:
+    default: deny
+    direction: incoming
+- name: 'Local timezone'
+  timezone:
+    name: "{{ time_zone }}"

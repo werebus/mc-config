@@ -9,11 +9,18 @@
       notify:
         - restart minecraft
 
+- name: 'User whitelist'
+  <<: *rst
+  copy:
+    <<: *mco
+    dest: "{{ minecraft_dir }}/server/whitelist.json"
+    content: "{{ minecraft_users | json_query('[*].{ name: name, uuid: uuid }') }}"
+
 - name: 'LuckPerms config'
   <<: *rst
   copy:
     <<: *mco
-    src: files/luckperms_config.yml
+    src: luckperms_config.yml
     dest: "{{ plugin_dir }}/LuckPerms/config.yml"
 
 - name: 'LuckPerms permission dir'
@@ -33,7 +40,7 @@
 - name: 'Group permissions'
   <<: *rst
   synchronize:
-    src: files/luckperms/groups/
+    src: groups/
     dest: "{{ perm_dir }}/groups"
     archive: no
     recursive: yes
@@ -45,7 +52,7 @@
 - name: 'Tracks'
   <<: *rst
   synchronize:
-    src: files/luckperms/tracks/
+    src: tracks/
     dest: "{{ perm_dir }}/tracks"
     archive: no
     recursive: yes

@@ -1,4 +1,11 @@
 ---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+
 - name: 'Install prereqs'
   apt:
     pkg:
@@ -32,3 +39,10 @@
     chdir: /usr/local/src/mcrcon
     target: install 
   when: 'mcrcon_installed_version is failed or mcrcon_reinstall_from_source'
+
+- name: 'Console script'
+  template:
+    <<: *mco
+    src: console.sh.j2
+    dest: "{{ minecraft_dir }}/tools/console.sh"
+    mode: '755'

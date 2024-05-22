@@ -1,0 +1,11 @@
+---
+- name: 'Minecraft systemd unit'
+  template:
+    src: templates/minecraft.service.j2
+    dest: /etc/systemd/system/minecraft@.service
+- name: 'Minecraft service'
+  systemd:
+    name: 'minecraft@server.service'
+    enabled: yes
+    state: started
+    daemon_reload: yes

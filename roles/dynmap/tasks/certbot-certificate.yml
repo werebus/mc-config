@@ -1,0 +1,30 @@
+---
+- name: 'Stop lighttpd for certbot'
+  service:
+    name: lighttpd
+    state: stopped
+- name: 'Get initial certificate'
+  command:
+    cmd: >
+      certbot certonly -n -m {{ admin_email }} --agree-tos
+      --standalone -d {{ ansible_fqdn }}
+- name: 'Combined key/cert file'
+  assemble:
+    remote_src: yes
+    src: "/etc/letsencrypt/live/{{ ansible_fqdn }}"
+    regexp: "(privkey|cert)\\.pem"
+    dest: "/etc/letsencrypt/live/{{ ansible_fqdn }}/combined.pem"
+- name: 'Allow webserver to read live cert'
+  file:
+    path: /etc/letsencrypt/live
+    group: www-data
+    mode: 'g+x'
+- name: 'Allow webserver to read archive cert'
+  file:
+    path: /etc/letsencrypt/archive
+    group: www-data
+    mode: 'g+x'
+- name: 'Start lighttpd for certbot'
+  service:
+    name: lighttpd
+    state: started

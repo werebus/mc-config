@@ -1,0 +1,8 @@
+minecraft_user: minecraft
+minecraft_group: minecraft
+minecraft_dir: /opt/minecraft
+
+minecraft_port: '25565'
+minecraft_ram: "{{ (ansible_memtotal_mb * 0.7) | round | int }}M"
+
+paper_version: '1.20.1'

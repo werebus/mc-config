@@ -2,21 +2,10 @@
 - hosts: servers
   become: yes
 
-  tasks:
-    - import_tasks: tasks/main.yml
-    - import_tasks: tasks/minecraft.yml
-    - import_tasks: tasks/plugins.yml
-    - import_tasks: tasks/dynmap.yml
-    - import_tasks: tasks/permissions.yml
-    - import_tasks: tasks/mcrcon.yml
-    - import_tasks: tasks/tools.yml
-
-  handlers:
-    - name: restart minecraft
-      systemd:
-        name: 'minecraft@server.service'
-        state: restarted
-    - name: restart lighttpd
-      systemd:
-        name: 'lighttpd.service'
-        state: restarted
+  roles:
+    - base
+    - minecraft
+    - plugins
+    - access
+    - dynmap
+    - tools

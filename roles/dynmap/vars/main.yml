@@ -1,0 +1,2 @@
+---
+minecraft_map_webroot: "{{ plugin_dir }}/dynmap/web"

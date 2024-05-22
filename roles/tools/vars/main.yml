@@ -1,0 +1,5 @@
+---
+mcrcon_reinstall_from_source: no
+mcrcon_version: '0.7.2'
+rcon_port: 25575
+rcon_password: "{{ vault_rcon_password }}"

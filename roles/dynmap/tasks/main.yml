@@ -1,0 +1,23 @@
+---
+- name: 'Shared YML chunks'
+  meta: noop
+  args:
+    minecraft_owned: &mco
+      owner: "{{ minecraft_user }}"
+      group: "{{ minecraft_group }}"
+
+- name: 'Dynmap config'
+  copy:
+    <<: *mco
+    src: dynmap_configuration.yml
+    dest: "{{ plugin_dir }}/dynmap/configuration.txt"
+  notify:
+    - restart minecraft
+- name: 'Dynmap webroot'
+  file:
+    <<: *mco
+    path: "{{ minecraft_map_webroot }}"
+    state: directory
+
+- include_tasks: lighttpd.yml
+- include_tasks: certbot.yml
