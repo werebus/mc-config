@@ -2,11 +2,30 @@
 - name: 'Install certbot'
   apt:
     name: certbot
+
+- name: 'Letsencrypt pre hook'
+  copy:
+    dest: /etc/letsencrypt/renewal-hooks/pre/lighttpd.sh
+    mode: 0o700
+    content: |
+      #!/bin/sh
+      set -e
+      /usr/bin/systemctl stop lighttpd.service
+
 - name: 'Letsencrypt deploy hook'
   template:
     src: certbot_renew_deploy_hook.sh.j2
     dest: /etc/letsencrypt/renewal-hooks/deploy/lighttpd.sh
-    mode: '0700'
+    mode: 0o700
+
+- name: 'Letsencrypt post hook'
+  copy:
+    dest: /etc/letsencrypt/renewal-hooks/post/lighttpd.sh
+    mode: 0o700
+    content: |
+      #!/bin/sh
+      set -e
+      /usr/bin/systemctl start lighttpd.service
 
 - name: 'Check if certificate exists'
   stat:

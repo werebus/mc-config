@@ -5,9 +5,7 @@ set -e
 for domain in $RENEWED_DOMAINS; do
   case $domain in
   {{ ansible_fqdn }})
-
     cat "$RENEWED_LINEAGE/privkey.pem" "$RENEWED_LINEAGE/cert.pem" > "$RENEWED_LINEAGE/combined.pem"
-    systemctl restart lighttpd.service
     ;;
   esac
 done
