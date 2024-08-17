@@ -22,9 +22,9 @@ bukkit_plugins:
     checksum: 3ab0a738fc242ec3a699d38382400e4bbfdfc872
     confdir: 'LuckPerms'
   - name: DynMap
-    version: '3.6'
+    version: '3.7-bata7'
     file: dynmap.jar
-    checksum: a423f4270c4ceab49b6c19794c93ee5ff4e6c3d6
+    checksum: 9edf62db56519682e30c3753f2964dc2b4250e1f
     confdir: 'dynmap'
   - name: Spark
     version: '1.10.66'
