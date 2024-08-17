@@ -47,7 +47,7 @@ messages:
     authentication-servers-down: ''
     connection-throttle: Connection throttled! Please wait before reconnecting.
 timings:
-  enabled: true
+  enabled: false
   verbose: true
   server-name-privacy: false
   hidden-config-entries:
