@@ -1,5 +1,5 @@
 version:
-  version: '5.6'
+  version: '6.1'
   last_run_version: '5.6'
 
 core:
@@ -21,8 +21,10 @@ core:
   disable_in_worlds:
   dynmap_enable: 'false'
   worldguard_enable: 'false'
+  towny_enable: 'false'
   holographic_displays_enable: 'false'
   cenotaph_cost: '0.0'
+  pvp_kills_dont_get_chests: 'false'
 
 removal:
   destroy_quick_loot: 'false'
@@ -40,3 +42,5 @@ security:
 
 startup:
   enable_ascii: 'false'
+
+language: english.yml
