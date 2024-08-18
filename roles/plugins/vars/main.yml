@@ -27,6 +27,6 @@ bukkit_plugins:
     checksum: 9edf62db56519682e30c3753f2964dc2b4250e1f
     confdir: 'dynmap'
   - name: Spark
-    version: '1.10.66'
+    version: '1.10.97'
     file: spark.jar
-    checksum: 1156fce2acde55d0aebcc79327b40fece7eedb09
+    checksum: 92aecb0cf6d2a4da7e8ab30720976d477c6910ef
