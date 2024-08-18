@@ -14,6 +14,11 @@
     <<: *mco
     path: "{{ minecraft_dir }}/server"
     state: directory
+- name: 'Config directory'
+  file:
+    <<: *mco
+    path: "{{ minecraft_dir }}/server/config"
+    state: directory
 - name: 'Agree to EULA'
   copy:
     <<: *mco
@@ -38,12 +43,18 @@
     <<: *mco
     src: spigot.yml
     dest: "{{ minecraft_dir }}/server/spigot.yml"
-- name: 'Paper config'
+- name: 'Paper global config'
   <<: *rst
   copy:
     <<: *mco
-    src: paper.yml
-    dest: "{{ minecraft_dir }}/server/paper.yml"
+    src: paper-global.yml
+    dest: "{{ minecraft_dir }}/server/config/paper-global.yml"
+- name: 'Paper world defaults config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: paper-world-defaults.yml
+    dest: "{{ minecraft_dir }}/server/config/paper-world-defaults.yml"
 
 - include_tasks: paper.yml
 - include_tasks: service.yml
