@@ -26,9 +26,15 @@
     backup: yes
   loop: "{{ bukkit_plugins }}"
 
-- name: 'Cenotaph config'
+- name: 'DeadChest config'
   <<: *rst
   copy:
     <<: *mco
-    src: cenotaph_config.yml
-    dest: "{{ plugin_dir }}/Cenotaph/config.yml"
+    src: deadchest_config.yml
+    dest: "{{ plugin_dir }}/DeadChest/config.yml"
+- name: 'DeadChest locale'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: deadchest_locale.yml
+    dest: "{{ plugin_dir }}/DeadChest/locale.yml"

@@ -7,11 +7,11 @@ bukkit_plugins:
     version: '1.7.3'
     file: vault.jar
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
-  - name: Cenotaph
-    version: '6.1'
-    file: cenotaph.jar
-    checksum: 017fd52db582160dc2b63e9b33a4b627fb34d89f
-    confdir: 'Cenotaph'
+  - name: DeadChest
+    version: '2.21.1'
+    file: dead-chest.jar
+    checksum: 2bae2a12f60195ed8c5be5a9aada46b9b5dcbe27
+    confdir: 'DeadChest'
   - name: EssentialsX
     version: '2.20.1'
     file: essentialsx.jar

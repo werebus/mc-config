@@ -1,0 +1,40 @@
+auto-update: false
+
+OnlyOwnerCanOpenDeadChest: true
+DeadChestDuration: 0
+IndestructibleChest: true
+maxDeadChestPerPlayer: 15
+logDeadChestOnConsole: true
+RequirePermissionToGenerate: true
+RequirePermissionToGetChest: true
+RequirePermissionToListOwn: true
+AutoCleanupOnStart: false
+GenerateDeadChestInCreative: true
+DisplayDeadChestPositionOnDeath: true
+
+# > 1 - Items are added directly to the players inventory until it's full, excess gets dropped.
+# > 2 - All items are dropped on the ground.
+DropMode: 1
+
+# > 1 - CHEST
+# > 2 - PLAYER HEAD
+# > 3 - BARREL
+# > 4 - SHULKER BOX
+# > 5 - ENDER CHEST
+DropBlock: 1
+
+StoreXP: true
+StoreXPPercentage: 50
+ItemsDroppedAfterTimeOut: true
+GenerateOnLava: true
+GenerateOnWater: true
+GenerateOnRails: true
+GenerateInMinecart: true
+GenerateInTheEnd: true
+KeepInventoryOnPvpDeath: false
+EnableWorldGuardDetection: false
+item-durability-loss-on-death: 0
+
+ExcludedWorld: []
+ExcludedItems: []
+IgnoredItems: []

@@ -1,8 +1,10 @@
 name: players
 permissions:
-- cenotaph.freechest
-- cenotaph.freesign
-- cenotaph.large
+- deadchest.generate
+- deadchest.get
+- deadchest.remove.own
+- deadchest.list.own
+- deadchest.infinityChest
 - essentials.afk
 - essentials.back
 - essentials.compass
