@@ -16,10 +16,12 @@ Plugins
 =======
 * [Vault][vault]
 * [EssentialsX][esx]
-* [LuckPerms][lp]
-* [DynMap][dynmap]
-* [Cenotaph][cenotaph]
 * [Spark][spark]
+* [DynMap][dynmap]
+* [LuckPerms][lp]
+* [DeadChest][deadchest]
+* [Multiverse][mv] (Core, Portals, Inventories)
+
 
 Prereqs
 =======
@@ -54,7 +56,6 @@ $ ansible-playbook main.yml --user <remote_user>
 ```
 
 [ansible]: https://www.ansible.com/
-[cenotaph]: https://www.spigotmc.org/resources/cenotaph.2180/
 [dynmap]: https://www.spigotmc.org/resources/dynmap.274/
 [esx]: https://www.spigotmc.org/resources/essentialsx.9089/
 [lp]: https://luckperms.net/
@@ -62,3 +63,5 @@ $ ansible-playbook main.yml --user <remote_user>
 [paper]: https://papermc.io/
 [spark]: https://spark.lucko.me/
 [vault]: https://www.spigotmc.org/resources/vault.34315/
+[deadchest]: https://dev.bukkit.org/projects/dead-chest
+[mv]: https://www.spigotmc.org/resources/multiverse-core.390/

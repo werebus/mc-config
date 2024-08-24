@@ -26,3 +26,4 @@ permissions:
 - luckperms.user.promote
 - minecraft.command.banlist
 - minecraft.command.seed
+- multiverse.core.*

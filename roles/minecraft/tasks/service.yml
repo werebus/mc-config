@@ -7,5 +7,5 @@
   systemd:
     name: 'minecraft@server.service'
     enabled: yes
-    state: started
+    #state: started
     daemon_reload: yes

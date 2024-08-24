@@ -38,3 +38,10 @@
     <<: *mco
     src: deadchest_locale.yml
     dest: "{{ plugin_dir }}/DeadChest/locale.yml"
+
+- name: 'Multiverse config'
+  <<: *rst
+  copy:
+    <<: *mco
+    src: multiverse_config.yml
+    dest: "{{ plugin_dir }}/Multiverse-Core/config.yml"
