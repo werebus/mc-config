@@ -39,3 +39,7 @@ bukkit_plugins:
     version: '4.2.6'
     file: multiverse-inventories.jar
     checksum: a397c6071c5fb237a286433255ce3e55448b73e9
+  - name: Multiverse-Portals
+    version: '4.2.3'
+    file: multiverse-portals.jar
+    checksum: e351dd6f09eda6703575776a2232d759352cd7b6

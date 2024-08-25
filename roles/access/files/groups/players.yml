@@ -33,3 +33,4 @@ permissions:
 - multiverse.core.list.environments
 - multiverse.core.list.who
 - multiverse.core.list.worlds
+- multiverse.portal.access.*

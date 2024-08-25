@@ -28,3 +28,4 @@ permissions:
 - minecraft.command.seed
 - multiverse.core.*
 - multiverse.inventories.*
+- multiverse.portal.*
