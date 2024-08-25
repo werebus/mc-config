@@ -27,3 +27,4 @@ permissions:
 - minecraft.command.banlist
 - minecraft.command.seed
 - multiverse.core.*
+- multiverse.inventories.*

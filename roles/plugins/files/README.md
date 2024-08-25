@@ -7,6 +7,8 @@ licensed by their original author(s), not the owner of this repository:
 * `luckperms.jar` - Copyright (C) lucko (Luck) <luck@lucko.me>, contributors.
   `MIT`
 * `multiverse-core.jar` - Copyright (C) 2011 The Multiverse Team. `BSD-3-Clause`
+* `multiverse-inventories.jar` - Copyright (C) 2011 The Multiverse Team.
+  `BSD-3-Clause`
 * `spark.jar` - Copyright (C) 2018-2024 lucko (Luck) & other spark
   contributors. `GPL-3.0-or-later`
 * `vault,jar` - Copyright (C) 2011-2018 Morgan Humes <morgan@lanaddict.com>.

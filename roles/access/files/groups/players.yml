@@ -28,9 +28,7 @@ permissions:
 - essentials.r
 - essentials.rules
 - essentials.suicide
-- multiverse.access.world
-- multiverse.access.world_nether
-- multiverse.access.world_the_end
+- multiverse.access.*
 - multiverse.core.info
 - multiverse.core.list.environments
 - multiverse.core.list.who

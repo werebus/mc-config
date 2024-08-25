@@ -35,3 +35,7 @@ bukkit_plugins:
     file: multiverse-core.jar
     checksum: 1306366dcce1508b274281e8e2a5d0a5f8859900
     confdir: 'Multiverse-Core'
+  - name: Multiverse-Inventories
+    version: '4.2.6'
+    file: multiverse-inventories.jar
+    checksum: a397c6071c5fb237a286433255ce3e55448b73e9
