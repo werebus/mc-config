@@ -26,6 +26,7 @@ permissions:
 - luckperms.user.promote
 - minecraft.command.banlist
 - minecraft.command.seed
+- minecraft.debugstick
 - multiverse.core.*
 - multiverse.inventories.*
 - multiverse.portal.*
