@@ -7,4 +7,3 @@
     state: directory
 
 - include_tasks: console.yml
-- include_tasks: backups.yml
