@@ -8,7 +8,7 @@ bukkit_plugins:
     file: vault.jar
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: DeadChest
-    version: '2.21.1'
+    version: '4.21.1'
     file: dead-chest.jar
     checksum: 2bae2a12f60195ed8c5be5a9aada46b9b5dcbe27
     confdir: 'DeadChest'
@@ -31,9 +31,9 @@ bukkit_plugins:
     file: spark.jar
     checksum: 92aecb0cf6d2a4da7e8ab30720976d477c6910ef
   - name: Multiverse-Core
-    version: '4.3.1'
+    version: '4.3.13'
     file: multiverse-core.jar
-    checksum: 1306366dcce1508b274281e8e2a5d0a5f8859900
+    checksum: de27aff4cbf586a84f306ac9665693d9ea72d178
     confdir: 'Multiverse-Core'
   - name: Multiverse-Inventories
     version: '4.2.6'
