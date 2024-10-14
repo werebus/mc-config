@@ -12,6 +12,11 @@ bukkit_plugins:
     file: dead-chest.jar
     checksum: 2bae2a12f60195ed8c5be5a9aada46b9b5dcbe27
     confdir: 'DeadChest'
+    confiles:
+      - src: deadchest_config.yml
+        dest: config.yml
+      - src: deadchest_locale.yml
+        dest: locale.yml
   - name: EssentialsX
     version: '2.20.1'
     file: essentialsx.jar
@@ -35,6 +40,9 @@ bukkit_plugins:
     file: multiverse-core.jar
     checksum: de27aff4cbf586a84f306ac9665693d9ea72d178
     confdir: 'Multiverse-Core'
+    confiles:
+      - src: multiverse_config.yml
+        dest: config.yml
   - name: Multiverse-Inventories
     version: '4.2.6'
     file: multiverse-inventories.jar

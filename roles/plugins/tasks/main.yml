@@ -9,13 +9,6 @@
       notify:
         - restart minecraft
 
-- name: 'Plugin directories'
-  file:
-    <<: *mco
-    path: "{{ plugin_dir }}/{{ item.confdir }}"
-    state: directory
-  loop: "{{ bukkit_plugins | selectattr('confdir', 'defined') }}"
-
 - name: 'Install plugins'
   <<: *rst
   copy:
@@ -26,22 +19,17 @@
     backup: yes
   loop: "{{ bukkit_plugins }}"
 
-- name: 'DeadChest config'
-  <<: *rst
-  copy:
+- name: 'Plugin directories'
+  file:
     <<: *mco
-    src: deadchest_config.yml
-    dest: "{{ plugin_dir }}/DeadChest/config.yml"
-- name: 'DeadChest locale'
-  <<: *rst
-  copy:
-    <<: *mco
-    src: deadchest_locale.yml
-    dest: "{{ plugin_dir }}/DeadChest/locale.yml"
+    path: "{{ plugin_dir }}/{{ item.confdir }}"
+    state: directory
+  loop: "{{ bukkit_plugins | selectattr('confdir', 'defined') }}"
 
-- name: 'Multiverse config'
+- name: 'Plugin configs'
   <<: *rst
   copy:
     <<: *mco
-    src: multiverse_config.yml
-    dest: "{{ plugin_dir }}/Multiverse-Core/config.yml"
+    src: "{{ item.1.src }}"
+    dest: "{{ plugin_dir }}/{{ item.0.confdir }}/{{ item.1.dest }}"
+  loop: "{{ bukkit_plugins | selectattr('confiles', 'defined') | subelements('confiles') }}"
