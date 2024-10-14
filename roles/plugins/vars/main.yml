@@ -21,6 +21,10 @@ bukkit_plugins:
     version: '2.20.1'
     file: essentialsx.jar
     checksum: e626f9f250470bcf2feffbc3740f738f9cee50ef
+  - name: EssentialsX AntiBuild
+    version: '2.20.1'
+    file: essentialsx-anti-build.jar
+    checksum: 189d23f6aea5b3f2b255189c1af2bd8c0d53ae60
   - name: LuckPerms
     version: '5.4.139'
     file: luckperms.jar

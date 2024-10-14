@@ -14,6 +14,7 @@ permissions:
 - dynmap.*
 - essentials.ban
 - essentials.banip
+- essentials.build
 - essentials.gamemode.others
 - essentials.gamemode.spectator
 - essentials.kick
