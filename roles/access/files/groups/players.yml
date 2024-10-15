@@ -9,9 +9,9 @@ permissions:
 - essentials.back
 - essentials.build.*
 - essentials.build.break.bedrock:
-  value: false
+    value: false
 - essentials.build.place.bedrock:
-  value: false
+    value: false
 - essentials.compass
 - essentials.customtext
 - essentials.depth
