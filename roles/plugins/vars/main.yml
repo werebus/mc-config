@@ -30,23 +30,23 @@ bukkit_plugins:
     file: essentialsx-anti-build.jar
     checksum: 189d23f6aea5b3f2b255189c1af2bd8c0d53ae60
   - name: LuckPerms
-    version: '5.4.139'
+    version: '5.4.153'
     file: luckperms.jar
-    checksum: 4d94aef8f86b24c6effe541bd1094cd42d881ca7
+    checksum: 73f652b12f5b366f51ddb3136a5d34701ca9cad9
     confdir: 'LuckPerms'
   - name: DynMap
-    version: '3.7-beta7'
+    version: '3.7-beta8'
     file: dynmap.jar
-    checksum: 9edf62db56519682e30c3753f2964dc2b4250e1f
+    checksum: 1a8c52452bb1ccfb41a1dbfb06f9c444699e53b6
     confdir: 'dynmap'
   - name: Spark
-    version: '1.10.97'
+    version: '1.10.124'
     file: spark.jar
-    checksum: 92aecb0cf6d2a4da7e8ab30720976d477c6910ef
+    checksum: 8a80c6eaa463858227aaf96339bd5ae23030bb1c
   - name: Multiverse-Core
-    version: '4.3.13'
+    version: '4.3.14'
     file: multiverse-core.jar
-    checksum: de27aff4cbf586a84f306ac9665693d9ea72d178
+    checksum: 36209127e928617b4962440d09e04bbeb0627496
     confdir: 'Multiverse-Core'
     confiles:
       - src: multiverse_config.yml
