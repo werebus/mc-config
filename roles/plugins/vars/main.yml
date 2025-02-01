@@ -21,6 +21,10 @@ bukkit_plugins:
     version: '2.20.1'
     file: essentialsx.jar
     checksum: e626f9f250470bcf2feffbc3740f738f9cee50ef
+    confdir: 'Essentials'
+    confiles:
+      - src: essentials_config.yml
+        dest: config.yml
   - name: EssentialsX AntiBuild
     version: '2.20.1'
     file: essentialsx-anti-build.jar
