@@ -11,7 +11,7 @@
 
 - name: 'Paper version information'
   uri:
-    url: "https://papermc.io/api/v2/projects/paper/versions/{{ paper_version }}"
+    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}"
     return_content: yes
   register: 'paper_ver_response'
 - name: 'Set paper build number'
@@ -19,7 +19,7 @@
     paper_build: "{{ paper_ver_response.json.builds[-1] }}"
 - name: 'Paper build information'
   uri:
-    url: "https://papermc.io/api/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}"
+    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}"
     return_content: yes
   register: 'paper_build_response'
 - name: 'Set Paper download name'
@@ -28,7 +28,7 @@
 - name: 'Download Paper jar'
   get_url:
     <<: *mco
-    url: "https://papermc.io/api/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}/downloads/{{ paper_download }}"
+    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}/downloads/{{ paper_download }}"
     dest: "{{ minecraft_dir }}/server/{{ paper_download }}"
     backup: yes
 - name: 'Link to Paper download'
