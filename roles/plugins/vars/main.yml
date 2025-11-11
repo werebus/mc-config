@@ -18,17 +18,17 @@ bukkit_plugins:
       - src: deadchest_locale.yml
         dest: locale.yml
   - name: EssentialsX
-    version: '2.20.1'
+    version: '2.21.2'
     file: essentialsx.jar
-    checksum: e626f9f250470bcf2feffbc3740f738f9cee50ef
+    checksum: f678ee85da1a8adf309df163d8b4166d2dc65554
     confdir: 'Essentials'
     confiles:
       - src: essentials_config.yml
         dest: config.yml
   - name: EssentialsX AntiBuild
-    version: '2.20.1'
+    version: '2.21.2'
     file: essentialsx-anti-build.jar
-    checksum: 189d23f6aea5b3f2b255189c1af2bd8c0d53ae60
+    checksum: ece694a4fc05612ba4b4d39cfbcf51056d993732
   - name: LuckPerms
     version: '5.4.153'
     file: luckperms.jar
