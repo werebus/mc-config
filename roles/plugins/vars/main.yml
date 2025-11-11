@@ -35,9 +35,9 @@ bukkit_plugins:
     checksum: 968f0f93c5b38b7cb9c190827ff6a2c65e9d3585
     confdir: 'LuckPerms'
   - name: DynMap
-    version: '3.7-beta8'
+    version: '3.7-beta10'
     file: dynmap.jar
-    checksum: 1a8c52452bb1ccfb41a1dbfb06f9c444699e53b6
+    checksum: d0615f28f54289287fcd4006aa750d50724ccbb1
     confdir: 'dynmap'
   - name: Multiverse-Core
     version: '4.3.14'
