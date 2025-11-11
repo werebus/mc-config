@@ -16,7 +16,6 @@ Plugins
 =======
 * [Vault][vault]
 * [EssentialsX][esx]
-* [Spark][spark]
 * [DynMap][dynmap]
 * [LuckPerms][lp]
 * [DeadChest][deadchest]
@@ -61,7 +60,6 @@ $ ansible-playbook main.yml --user <remote_user>
 [lp]: https://luckperms.net/
 [mcrcon]: https://github.com/Tiiffi/mcrcon
 [paper]: https://papermc.io/
-[spark]: https://spark.lucko.me/
 [vault]: https://www.spigotmc.org/resources/vault.34315/
 [deadchest]: https://dev.bukkit.org/projects/dead-chest
 [mv]: https://www.spigotmc.org/resources/multiverse-core.390/

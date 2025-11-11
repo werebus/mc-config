@@ -39,10 +39,6 @@ bukkit_plugins:
     file: dynmap.jar
     checksum: 1a8c52452bb1ccfb41a1dbfb06f9c444699e53b6
     confdir: 'dynmap'
-  - name: Spark
-    version: '1.10.124'
-    file: spark.jar
-    checksum: 8a80c6eaa463858227aaf96339bd5ae23030bb1c
   - name: Multiverse-Core
     version: '4.3.14'
     file: multiverse-core.jar
