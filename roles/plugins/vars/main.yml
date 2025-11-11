@@ -8,9 +8,9 @@ bukkit_plugins:
     file: vault.jar
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: DeadChest
-    version: '4.21.1'
+    version: '4.23.0'
     file: dead-chest.jar
-    checksum: 2bae2a12f60195ed8c5be5a9aada46b9b5dcbe27
+    checksum: 52e1ef2d01253e8ba9398b91baadcd10b50511a6
     confdir: 'DeadChest'
     confiles:
       - src: deadchest_config.yml
