@@ -40,18 +40,18 @@ bukkit_plugins:
     checksum: d0615f28f54289287fcd4006aa750d50724ccbb1
     confdir: 'dynmap'
   - name: Multiverse-Core
-    version: '4.3.14'
+    version: '5.3.3'
     file: multiverse-core.jar
-    checksum: 36209127e928617b4962440d09e04bbeb0627496
+    checksum: 936c2256c041e540d2734e0f80d3117a1da29712
     confdir: 'Multiverse-Core'
     confiles:
       - src: multiverse_config.yml
         dest: config.yml
   - name: Multiverse-Inventories
-    version: '4.2.6'
+    version: '5.2.0'
     file: multiverse-inventories.jar
-    checksum: a397c6071c5fb237a286433255ce3e55448b73e9
+    checksum: 409d7dca177590aa66300cc051e4c8909d054412
   - name: Multiverse-Portals
-    version: '4.2.3'
+    version: '5.1.1'
     file: multiverse-portals.jar
-    checksum: e351dd6f09eda6703575776a2232d759352cd7b6
+    checksum: c5aef22df9e571f5c19607c3b75d13827e86d864
