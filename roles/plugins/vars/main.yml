@@ -4,10 +4,12 @@ plugin_dir: "{{ minecraft_dir }}/server/plugins"
 
 bukkit_plugins:
   - name: Vault
+    url: 'https://github.com/MilkBowl/Vault'
     version: '1.7.3'
     file: vault.jar
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: DeadChest
+    url: 'https://dev.bukkit.org/projects/dead-chest'
     version: '4.23.0'
     file: dead-chest.jar
     checksum: 52e1ef2d01253e8ba9398b91baadcd10b50511a6
@@ -18,6 +20,7 @@ bukkit_plugins:
       - src: deadchest_locale.yml
         dest: locale.yml
   - name: EssentialsX
+    url: 'https://essentialsx.net/downloads.html'
     version: '2.21.2'
     file: essentialsx.jar
     checksum: f678ee85da1a8adf309df163d8b4166d2dc65554
@@ -26,32 +29,38 @@ bukkit_plugins:
       - src: essentials_config.yml
         dest: config.yml
   - name: EssentialsX AntiBuild
+    url: 'https://essentialsx.net/downloads.html'
     version: '2.21.2'
     file: essentialsx-anti-build.jar
     checksum: ece694a4fc05612ba4b4d39cfbcf51056d993732
   - name: LuckPerms
+    url: 'https://luckperms.net/download'
     version: '5.5.20'
     file: luckperms.jar
     checksum: 968f0f93c5b38b7cb9c190827ff6a2c65e9d3585
     confdir: 'LuckPerms'
   - name: DynMap
+    url: 'https://www.curseforge.com/minecraft/bukkit-plugins/dynmap'
     version: '3.7-beta10'
     file: dynmap.jar
     checksum: d0615f28f54289287fcd4006aa750d50724ccbb1
     confdir: 'dynmap'
   - name: Multiverse-Core
-    version: '5.3.3'
+    url: 'https://modrinth.com/plugin/multiverse-core'
+    version: '5.3.4'
     file: multiverse-core.jar
-    checksum: 936c2256c041e540d2734e0f80d3117a1da29712
+    checksum: 26a0268f4c3b9032da3770315a52549783bd07c6
     confdir: 'Multiverse-Core'
     confiles:
       - src: multiverse_config.yml
         dest: config.yml
   - name: Multiverse-Inventories
-    version: '5.2.0'
+    url: 'https://modrinth.com/plugin/multiverse-inventories'
+    version: '5.2.1'
     file: multiverse-inventories.jar
-    checksum: 409d7dca177590aa66300cc051e4c8909d054412
+    checksum: 1fe4533cd0d90bdfc8af8b82fe04671aa3784a1f
   - name: Multiverse-Portals
+    url: 'https://modrinth.com/plugin/multiverse-portals'
     version: '5.1.1'
     file: multiverse-portals.jar
     checksum: c5aef22df9e571f5c19607c3b75d13827e86d864
