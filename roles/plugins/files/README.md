@@ -2,7 +2,6 @@ Jar files in this directory are redistributed software and are copyright and
 licensed by their original author(s), not the owner of this repository:
 
 * `dead-chest.jar` - Copyright Crylonz. `GPL-3.0-or-later`
-* `dynmap.jar` - Copyright unknown. `Apache-2.0`
 * `essentialsx.jar` - Copyright (C) 2011  Essentials Team. `GPL-3.0-or-later`
 * `essentialsx-anti-build.jar` - Copyright (C) 2011  Essentials Team.
   `GPL-3.0-or-later`

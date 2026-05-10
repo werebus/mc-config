@@ -39,12 +39,6 @@ bukkit_plugins:
     file: luckperms.jar
     checksum: 968f0f93c5b38b7cb9c190827ff6a2c65e9d3585
     confdir: 'LuckPerms'
-  - name: DynMap
-    url: 'https://www.curseforge.com/minecraft/bukkit-plugins/dynmap'
-    version: '3.7-beta11-1.21.11-spigot'
-    file: dynmap.jar
-    checksum: 1495293f780fabc6151791b970550e56bfc586e5
-    confdir: 'dynmap'
   - name: Multiverse-Core
     url: 'https://modrinth.com/plugin/multiverse-core'
     version: '5.3.4'
