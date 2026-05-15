@@ -42,8 +42,8 @@ bukkit_plugins:
   - name: Bluemap
     url: 'https://bluemap.bluecolored.de/'
     version: '5.20'
-    file: bluemap-paper.jar
-    checksum: a39be82487b9d663ee9f4b2cf2e8b62349916023
+    file: bluemap-spigot.jar
+    checksum: 2c187681b18f7f4d06c82c2af0951b57855998c0
   - name: Multiverse-Core
     url: 'https://modrinth.com/plugin/multiverse-core'
     version: '5.3.4'
