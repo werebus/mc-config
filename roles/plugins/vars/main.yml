@@ -39,6 +39,11 @@ bukkit_plugins:
     file: luckperms.jar
     checksum: 968f0f93c5b38b7cb9c190827ff6a2c65e9d3585
     confdir: 'LuckPerms'
+  - name: Bluemap
+    url: 'https://bluemap.bluecolored.de/'
+    version: '5.20'
+    file: bluemap-paper.jar
+    checksum: a39be82487b9d663ee9f4b2cf2e8b62349916023
   - name: Multiverse-Core
     url: 'https://modrinth.com/plugin/multiverse-core'
     version: '5.3.4'
