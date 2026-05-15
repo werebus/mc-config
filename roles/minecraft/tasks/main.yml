@@ -23,6 +23,6 @@
     port: "{{ minecraft_port }}"
 - name: 'Install Java'
   apt:
-    name: openjdk-21-jre-headless
+    name: openjdk-25-jre-headless
 
 - include_tasks: server.yml
