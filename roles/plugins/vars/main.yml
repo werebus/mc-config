@@ -48,20 +48,20 @@ bukkit_plugins:
         dest: core.conf
   - name: Multiverse-Core
     url: 'https://modrinth.com/plugin/multiverse-core'
-    version: '5.3.4'
+    version: '5.6.2'
     file: multiverse-core.jar
-    checksum: 26a0268f4c3b9032da3770315a52549783bd07c6
+    checksum: e37ee698e5d942c030153a2ac42be458ff32583d
     confdir: 'Multiverse-Core'
     confiles:
       - src: multiverse_config.yml
         dest: config.yml
   - name: Multiverse-Inventories
     url: 'https://modrinth.com/plugin/multiverse-inventories'
-    version: '5.2.1'
+    version: '5.3.3'
     file: multiverse-inventories.jar
-    checksum: 1fe4533cd0d90bdfc8af8b82fe04671aa3784a1f
+    checksum: c7ff5b7a73ea7a47b6c3cc110b100bdd34ac038f
   - name: Multiverse-Portals
     url: 'https://modrinth.com/plugin/multiverse-portals'
-    version: '5.1.1'
+    version: '5.2.2'
     file: multiverse-portals.jar
-    checksum: c5aef22df9e571f5c19607c3b75d13827e86d864
+    checksum: 3a8b96023e1171d1a39df26eead268b4d5a84246
