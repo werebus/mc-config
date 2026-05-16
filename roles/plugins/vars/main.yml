@@ -44,6 +44,10 @@ bukkit_plugins:
     version: '5.20'
     file: bluemap-spigot.jar
     checksum: 2c187681b18f7f4d06c82c2af0951b57855998c0
+    confdir: 'BlueMap'
+    confiles:
+      - src: bluemap_core.conf
+        dest: core.conf
   - name: Multiverse-Core
     url: 'https://modrinth.com/plugin/multiverse-core'
     version: '5.3.4'

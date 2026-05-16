@@ -36,8 +36,8 @@ index-file.names            = ( "index.php", "index.html" )
 url.access-deny             = ( "~", ".inc" )
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )
 
-compress.cache-dir          = "/var/cache/lighttpd/compress/"
-compress.filetype           = ( "application/javascript", "text/css", "text/html", "text/plain" )
+deflate.cache-dir           = "/var/cache/lighttpd/compress/"
+deflate.mimetypes           = ( "application/javascript", "text/css", "text/html", "text/plain" )
 
 # default listening port for IPv6 falls back to the IPv4 port
 ## Use ipv6 if available
@@ -55,9 +55,22 @@ $HTTP["scheme"] == "http" {
     url.redirect = ("" => "https://${url.authority}${url.path}${qsa}")
 }
 
-#server.compat-module-load   = "disable"
 server.modules += (
-	"mod_compress",
-	"mod_dirlisting",
-	"mod_staticfile",
+	"mod_deflate",
+  "mod_magnet",
+  "mod_proxy"
 )
+
+$HTTP["url"] =~ "^/maps/" {
+  magnet.attract-physical-path-to = ( "/etc/lighttpd/bluemap.lua" )
+}
+
+# live player markers
+$HTTP["url"] =~ "^/maps/[^/]+/live/" {
+  proxy.server = (
+    "" => ((
+      "host" => "127.0.0.1",
+      "port" => 8100
+    ))
+  )
+}

@@ -1,7 +1,9 @@
 ---
 - name: 'Install Lighttpd'
   apt:
-    name: lighttpd
+    pkg:
+      - lighttpd
+      - lighttpd-mod-magnet
 - name: 'Allow http in'
   ufw:
     rule: allow
@@ -14,5 +16,11 @@
   template:
     src: lighttpd.conf.j2
     dest: /etc/lighttpd/lighttpd.conf
+  notify:
+    - restart lighttpd
+- name: 'Bluemap request magnet'
+  copy:
+    src: bluemap.lua
+    dest: /etc/lighttpd/bluemap.lua
   notify:
     - restart lighttpd

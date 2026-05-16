@@ -1,2 +1,2 @@
 ---
-minecraft_map_webroot: "{{ plugin_dir }}/dynmap/web"
+minecraft_map_webroot: "{{ minecraft_dir }}/server/bluemap/web"
