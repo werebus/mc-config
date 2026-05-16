@@ -29,7 +29,7 @@
 
 - name: 'Check if certificate exists'
   stat:
-    path: "/etc/letsencrypt/live/{{ ansible_fqdn }}/cert.pem"
+    path: "/etc/letsencrypt/live/{{ ansible_facts['fqdn'] }}/cert.pem"
   register: cert_exists
 
 - include_tasks: certbot-certificate.yml

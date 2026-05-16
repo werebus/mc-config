@@ -47,8 +47,8 @@ include "/etc/lighttpd/conf-enabled/*.conf"
 
 $SERVER["socket"] == ":443" {
     ssl.engine              = "enable"
-    ssl.ca-file             = "/etc/letsencrypt/live/{{ ansible_fqdn }}/chain.pem"
-    ssl.pemfile             = "/etc/letsencrypt/live/{{ ansible_fqdn }}/combined.pem"
+    ssl.ca-file             = "/etc/letsencrypt/live/{{ ansible_facts['fqdn'] }}/chain.pem"
+    ssl.pemfile             = "/etc/letsencrypt/live/{{ ansible_facts['fqdn'] }}/combined.pem"
 }
 
 $HTTP["scheme"] == "http" {
