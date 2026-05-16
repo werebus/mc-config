@@ -10,9 +10,9 @@ bukkit_plugins:
     checksum: e1e443a08d3280f9dbcb233a8c3a20d4c1286a6d
   - name: DeadChest
     url: 'https://dev.bukkit.org/projects/dead-chest'
-    version: '4.23.0'
+    version: '4.30.0'
     file: dead-chest.jar
-    checksum: 52e1ef2d01253e8ba9398b91baadcd10b50511a6
+    checksum: 91e670785d99def54ceffa6cdcdb35658bc11c01
     confdir: 'DeadChest'
     confiles:
       - src: deadchest_config.yml
