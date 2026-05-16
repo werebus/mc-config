@@ -17,8 +17,6 @@ bukkit_plugins:
     confiles:
       - src: deadchest_config.yml
         dest: config.yml
-      - src: deadchest_locale.yml
-        dest: locale.yml
   - name: EssentialsX
     url: 'https://essentialsx.net/downloads.html'
     version: '2.21.2'

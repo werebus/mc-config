@@ -10,7 +10,7 @@ permissions:
 - deadchest.admin
 - deadchest.remove.other
 - deadchest.list.other
-- deadchest.giveBack
+- deadchest.giveback
 - dynmap.*
 - essentials.ban
 - essentials.banip

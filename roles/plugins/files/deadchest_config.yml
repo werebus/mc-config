@@ -1,40 +1,88 @@
-auto-update: false
+config-version: 2
 
-OnlyOwnerCanOpenDeadChest: true
-DeadChestDuration: 0
-IndestructibleChest: true
-maxDeadChestPerPlayer: 15
-logDeadChestOnConsole: true
-RequirePermissionToGenerate: true
-RequirePermissionToGetChest: true
-RequirePermissionToListOwn: true
-AutoCleanupOnStart: false
-GenerateDeadChestInCreative: true
-DisplayDeadChestPositionOnDeath: true
+localization:
+  language: en
 
-# > 1 - Items are added directly to the players inventory until it's full, excess gets dropped.
-# > 2 - All items are dropped on the ground.
-DropMode: 1
+updates:
+  auto-check: false
 
-# > 1 - CHEST
-# > 2 - PLAYER HEAD
-# > 3 - BARREL
-# > 4 - SHULKER BOX
-# > 5 - ENDER CHEST
-DropBlock: 1
+chest:
+  owner-only-open: true
+  duration-seconds: 0
+  indestructible: true
+  max-per-player: 15
+  recovery-mode: inventory-then-ground
+  block-type: chest
+  drop-items-on-timeout: true
+  loot:
+    enabled: false
+    public-duration-seconds: 300
+    drop-items-on-timeout: false
+    public-access:
+      owner: true
+      killer: true
+      other-players: true
 
-StoreXP: true
-StoreXPPercentage: 50
-ItemsDroppedAfterTimeOut: true
-GenerateOnLava: true
-GenerateOnWater: true
-GenerateOnRails: true
-GenerateInMinecart: true
-GenerateInTheEnd: true
-KeepInventoryOnPvpDeath: false
-EnableWorldGuardDetection: false
-item-durability-loss-on-death: 0
+permissions:
+  require-generate: true
+  require-claim: true
+  require-list-own: true
 
-ExcludedWorld: []
-ExcludedItems: []
-IgnoredItems: []
+maintenance:
+  cleanup-on-startup: false
+
+generation:
+  allow-in-creative: true
+  allow-on-lava: true
+  allow-on-water: true
+  allow-on-rails: true
+  allow-in-minecart: true
+  allow-in-end-worlds: true
+
+messages:
+  display-position-on-death: true
+
+xp:
+  store-on-death: true
+  store-percentage: 50
+
+pvp:
+  keep-inventory-on-player-kill: false
+
+integrations:
+  worldguard:
+    enabled: false
+    default-allow: false
+
+durability:
+  loss-on-death-percent: 0
+
+logging:
+  deadchest-create-to-console: true
+
+visuals:
+  effect-animation:
+    enabled: true
+    style: soul
+    radius: 0.8
+    speed: 1.1
+  pickup-animation:
+    enabled: true
+    particle: FIREWORK
+    count: 22
+    offset-x: 0.45
+    offset-y: 0.5
+    offset-z: 0.45
+    speed: 0.08
+    y-shift: 0.55
+  sound:
+    pickup:
+      enabled: true
+      name: ENTITY_PLAYER_LEVELUP
+      volume: 1.2
+      pitch: 1.0
+
+filters:
+  excluded-worlds: []
+  excluded-items: []
+  ignored-items: []
