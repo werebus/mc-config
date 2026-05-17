@@ -11,31 +11,42 @@
 
 - name: 'Paper version information'
   uri:
-    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}"
+    url: "https://fill.papermc.io/v3/projects/paper/versions/{{ paper_version }}/builds"
     return_content: yes
   register: 'paper_ver_response'
 - name: 'Set paper build number'
   set_fact:
-    paper_build: "{{ paper_ver_response.json.builds[-1] }}"
+    paper_build: >-
+      {{
+        (
+          paper_ver_response.json
+          | selectattr('channel', 'equalto', 'STABLE')
+          | list
+          | first
+        ).id
+      }}
 - name: 'Paper build information'
   uri:
-    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}"
+    url: "https://fill.papermc.io/v3/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}"
     return_content: yes
   register: 'paper_build_response'
 - name: 'Set Paper download name'
   set_fact:
-    paper_download: "{{ paper_build_response.json.downloads.application.name }}"
+    paper_download_name: "{{ paper_build_response.json.downloads['server:default'].name }}"
+- name: 'Set Paper download URL'
+  set_fact:
+    paper_download_url: "{{ paper_build_response.json.downloads['server:default'].url }}"
 - name: 'Download Paper jar'
   get_url:
     <<: *mco
-    url: "https://api.papermc.io/v2/projects/paper/versions/{{ paper_version }}/builds/{{ paper_build }}/downloads/{{ paper_download }}"
-    dest: "{{ minecraft_dir }}/server/{{ paper_download }}"
+    url: "{{ paper_download_url }}"
+    dest: "{{ minecraft_dir }}/server/{{ paper_download_name }}"
     backup: yes
 - name: 'Link to Paper download'
   <<: *rst
   file:
     <<: *mco
     dest: "{{ minecraft_dir }}/server/paper.jar"
-    src: "{{ minecraft_dir }}/server/{{ paper_download }}"
+    src: "{{ minecraft_dir }}/server/{{ paper_download_name }}"
     state: link
     follow: no
